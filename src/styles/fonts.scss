@@ -1,39 +1,47 @@
 @font-face {
     font-family: hkRegular;
+    font-display: fallback;
     src: url('../assets/fonts/HKGrotesk-Regular.woff2');
 }
 
 @font-face {
     font-family: hkItalic;
+    font-display: fallback;
     src: url('../assets/fonts/HKGrotesk-Italic.woff2');
 }
 
 @font-face {
     font-family: hkBold;
+    font-display: fallback;
     src: url('../assets/fonts/HKGrotesk-Bold.woff2');
 }
 
 @font-face {
     font-family: hkBoldItalic;
+    font-display: fallback;
     src: url('../assets/fonts/HKGrotesk-BoldItalic.woff2');
 }
 
 @font-face {
     font-family: hkMedium;
+    font-display: fallback;
     src: url('../assets/fonts/HKGrotesk-Medium.woff2');
 }
 
 @font-face {
     font-family: hkMediumItalic;
+    font-display: fallback;
     src: url('../assets/fonts/HKGrotesk-MediumItalic.woff2');
 }
 
 @font-face {
     font-family: hkSemiBold;
+    font-display: fallback;
     src: url('../assets/fonts/HKGrotesk-SemiBold.woff2');
 }
 
 @font-face {
     font-family: hkSemiBoldItalic;
+    font-display: fallback;
     src: url('../assets/fonts/HKGrotesk-SemiBoldItalic.woff2');
 }
