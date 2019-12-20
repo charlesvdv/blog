@@ -1,0 +1,24 @@
+@import "_toolbox";
+
+.blogpost-stub-container {
+    .title {
+        margin-bottom: 0;
+    }
+
+    .metadata {
+        opacity: 0.8;
+        font-size: 0.95em;
+    }
+
+    .description {
+        margin: 1em 0;
+
+        @media #{$phone-rule} {
+            margin: 0.5em 0;
+        }
+    }
+
+    a {
+        @include unstyle-link;
+    }
+}

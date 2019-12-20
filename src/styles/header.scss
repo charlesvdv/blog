@@ -1,0 +1,32 @@
+@import "_toolbox";
+
+.header-container {
+    padding: 3em 10%;
+    color: #212529;
+    font-size: 1.5em;
+
+    @media #{$phone-rule} {
+        font-size: 1.33em;
+        padding: 1.5em 1.5em;
+    }
+
+    .home-link {
+        font-family: hkSemiBold;
+        font-size: 1.33em;
+        padding-right: 1em;
+
+        @media #{$phone-rule} {
+            display: block;
+            padding-right: 0;
+        }
+    }
+
+    .other-link {
+        font-family: hkRegular;
+        padding-right: 0.8em;
+    }
+
+    a {
+        @include unstyle-link;
+    }
+}

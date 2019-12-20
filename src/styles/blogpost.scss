@@ -1,0 +1,18 @@
+@import "_toolbox";
+
+.blogpost-container {
+    .header {
+        margin-bottom: 2em;
+        @media #{$phone-rule} {
+            margin: 1em 0;
+        }
+        h1 {
+            margin-bottom: 0.2em;
+        }
+    }
+
+    .metadata {
+        opacity: 0.9;
+        font-size: 0.95em;
+    }
+}

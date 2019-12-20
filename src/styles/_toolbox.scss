@@ -1,0 +1,12 @@
+$phone-rule: "only screen and (max-width: 720px)";
+
+@mixin center-vertically {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin unstyle-link {
+    color: inherit;
+    text-decoration: inherit;
+}

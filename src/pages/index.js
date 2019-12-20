@@ -1,15 +1,27 @@
 import React from "react"
+import { Link } from "gatsby"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
+import BackgroundImageIndex from "../components/background-image-index"
+
+import "../styles/fonts.scss"
+import "../styles/index.scss"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-  </Layout>
-)
+    <div className="index-page-container">
+      <SEO title="Home" />
+        <BackgroundImageIndex className="background-image">
+            <div className="content">
+                <h1 className="title">Charles Vandevoorde</h1>
+                <div className="description">software engineer from brussels, belgium</div>
+                <nav>
+                    <Link to="/about">about/</Link>
+                    &nbsp;
+                    <Link to="/blog">blog/</Link>
+                </nav>
+            </div>
+        </BackgroundImageIndex>
+    </div>
+ )
 
 export default IndexPage

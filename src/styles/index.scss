@@ -1,0 +1,57 @@
+@import "_toolbox";
+
+html, body {
+     margin: 0;
+     padding: 0;
+     height: 100%;
+     width: 100%;
+}
+
+.index-page-container {
+    height: 100vh;
+    overflow: hidden;
+
+    .background-image {
+        height: 100vh;
+        width: 100%;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .content {
+        color: #fffffe;
+        font-family: hkRegular;
+        padding-left: calc(20% - 100px);
+        @include center-vertically;
+        height: 100vh;
+        font-size: 2em;
+
+        @media #{$phone-rule} {
+            padding-left: 5%;
+            font-size: 1.5em;
+        }
+
+        .title {
+            font-family: hkBold;
+            font-weight: 500;
+            font-size: 2em;
+            margin-bottom: 0;
+        }
+
+        .description {
+            font-family: hkMedium;
+            font-weight: 500;
+            margin-bottom: 1em;
+        }
+
+        nav {
+            font-size: 1.2em;
+            word-spacing: 0.5em;
+            a {
+                @include unstyle-link;
+            }
+        }
+
+
+    }
+}
