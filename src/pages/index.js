@@ -3,12 +3,14 @@ import { Link } from "gatsby"
 
 import SEO from "../components/seo"
 import BackgroundImageIndex from "../components/background-image-index"
+import Analytics from "../components/analytics"
 
 import "../styles/fonts.scss"
 import "../styles/index.scss"
 
 const IndexPage = () => (
     <div className="index-page-container">
+      <Analytics />
       <SEO title="Home" />
         <BackgroundImageIndex className="background-image">
             <div className="content">

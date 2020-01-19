@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Analytics from "./analytics"
 import "../styles/fonts.scss"
 import "../styles/layout.scss"
 
@@ -19,6 +20,7 @@ const Layout = ({ children, className }) => {
     return (
         <>
             <Header siteTitle={data.site.siteMetadata.title} />
+            <Analytics />
             <main className={className}>
                 {children}
             </main>
