@@ -2,6 +2,7 @@
 title: 'Book review: Refactoring by Martin Fowler'
 date: 2020-01-14
 description: "Personal thought after having read the book 'Refactoring: Improving the Design of Existing Code' by Martin Fowler (Second Edition)"
+draft: false
 ---
 
 I finished reading the new edition of 
