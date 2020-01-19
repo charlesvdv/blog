@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 const Analytics = () => {
     return (
         <Helmet>
-            <script type='text/javascript' src='//gc.zgo.at/count.js'></script>
+            <script async type='text/javascript' src='//gc.zgo.at/count.js'></script>
         </Helmet>
     )
 }

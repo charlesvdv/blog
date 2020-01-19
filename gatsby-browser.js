@@ -1,5 +1,4 @@
 exports.onRouteUpdate = ({ location }) => {
-    console.log(location)
     runAnalytics(location)
 }
 
