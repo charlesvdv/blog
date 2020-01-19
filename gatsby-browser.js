@@ -1,7 +1,22 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+exports.onRouteUpdate = ({ location }) => {
+    console.log(location)
+    runAnalytics(location)
+}
 
-// You can delete this file if you're not using it
+function runAnalytics(location) {
+    if (window.location.hostname !== 'vandevoorde.me') {
+        return
+    }
+
+    if (window.goatcounter == null) {
+        window.setTimeout(runAnalytics, 500)
+        return
+    }
+
+    window.goatcounter.vars = {no_onload: true}
+    window.counter = 'https://vandevoorde.goatcounter.com/count'
+    
+    window.goatcounter.count({
+        page: location.pathname + location.search + location.hash,
+    });
+}
