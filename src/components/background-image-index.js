@@ -7,7 +7,7 @@ const BackgroundImageIndex = ({ children, className }) => {
         query {
             bgImage: file(relativePath: { eq: "ozark-drones-jeV-LUEyJoE-unsplash.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2048, quality: 100) {
+                    fluid(maxWidth: 2048, quality: 60) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
