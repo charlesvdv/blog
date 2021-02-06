@@ -16,7 +16,7 @@ function createMarkdownNode(node, getNode, actions) {
     actions.createNodeField({
         node,
         name: 'slug',
-        value: `blog${slug}`,
+        value: `/blog${slug}`,
     })
 }
 
