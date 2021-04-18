@@ -17,10 +17,14 @@ const AboutPage = () => (
                 technologies and distributed systems.
             </p>
             <p>
-                On top of my passion for IT, I also do various sports. I swim and 
-                run regularly. I also practice a martial art 
-                called <a href="https://sites.google.com/view/wajutsu/">Wa-Jutsu</a> focused on 
-                the mastering of the body and the mind.
+                On top of my passion for information technology, I also do various sports. I bike and 
+                run regularly. I will never say no to a good beer.
+            </p>
+            <p>
+                The goal of this website is to share my thought and experiments.
+                This website serves also as a training ground to train myself into better writing.
+                If you have any comments or tips to improve myself, do not hesitate to send me an 
+                email.
             </p>
             <h2>Contact and socials</h2>
             <p>
