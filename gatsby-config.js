@@ -1,38 +1,75 @@
 module.exports = {
   siteMetadata: {
-    title: `Charles Vandevoorde`,
-    description: `Personal website of Charles Vandevoorde`,
-    author: `Charles Vandevoorde`,
-    siteUrl: `https://vandevoorde.me`
+    title: 'Charles Vandevoorde',
+    description: 'Personal website of Charles Vandevoorde',
+    author: 'Charles Vandevoorde',
+    siteUrl: 'https://vandevoorde.me',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blogpost`,
+        name: 'blogpost',
         path: `${__dirname}/src/pages/blog`,
       },
     },
+    'gatsby-transformer-remark',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-feed',
       options: {
-        name: `assets`,
-        path: `${__dirname}/src/assets`,
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map((node) => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.frontmatter.description,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ 'content:encoded': node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}, filter: {frontmatter: {draft: {ne: true}}}) {
+                  nodes {
+                    excerpt
+                    html
+                    frontmatter {
+                      title
+                      date
+                      description
+                    }
+                    fields {
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+          },
+        ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-sass`,
-    `gatsby-background-image`,
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-postcss',
   ],
 }
