@@ -14,7 +14,19 @@ module.exports = {
         path: `${__dirname}/src/pages/blog`,
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-vscode',
+            options: {
+              theme: 'Monokai Dimmed',
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-feed',
       options: {

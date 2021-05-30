@@ -18,7 +18,7 @@ const BlogpostTemplate = ({ data }) => {
         <h1 className='my-2 text-2xl sm:text-3xl md:text-4xl font-semibold opacity-90 text-gray-900'>
           {post.frontmatter.title}
         </h1>
-        <div className='italic text-gray-500 opacity-80 space-x-4 text-sm md:text-base'>
+        <div className='italic font-light text-gray-500 opacity-80 space-x-4 text-sm md:text-base'>
           <span>{formatDate(post.frontmatter.date)}</span>
           <span>{`${formatMinutes(post.timeToRead)} read`}</span>
         </div>

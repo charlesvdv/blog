@@ -13,7 +13,7 @@ const BlogpostStub = ({ node }) => {
         <h2 className='text-2xl md:text-3xl font-semibold opacity-90 text-gray-900'>
           {frontmatter.title}
         </h2>
-        <div className='text-gray-500 opacity-80 italic space-x-4 text-sm md:text-base'>
+        <div className='text-gray-500 opacity-80 italic font-light space-x-4 text-sm md:text-base'>
           <span>{formatDate(frontmatter.date)}</span>
           <span>{`${formatMinutes(node.timeToRead)} read`}</span>
         </div>
