@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gatsby-resp-image-figcaption {
+    @apply text-center my-0.5 !important
+}
+
+.gatsby-resp-image-figcaption > p {
+    @apply text-center m-0
+}

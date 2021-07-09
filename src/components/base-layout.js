@@ -18,7 +18,7 @@ const BaseLayout = ({ children, className }) => {
       className='grid grid-cols-3 gap-4 mx-2 my-8 md:mx-8 md:my-12'
       style={{ gridTemplateColumns: '1fr minmax(min-content, 60rem) 1fr' }}
     >
-      <Helmet bodyAttributes={{class: 'bg-green-50 bg-opacity-30'}} />
+      <Helmet bodyAttributes={{class: 'bg-green-30 bg-opacity-30'}} />
       <div className='relative col-start-2 2xl:col-start-1 2xl:row-start-1 2xl:col-span-1 2xl:h-32'>
         <Link
           to='/'

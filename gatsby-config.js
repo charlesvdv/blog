@@ -24,6 +24,14 @@ module.exports = {
               theme: 'Monokai Dimmed',
             },
           },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 600,
+              showCaptions: ['title'],              
+              markdownCaptions: true,
+            }
+          }
         ],
       },
     },
@@ -83,5 +91,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-postcss',
+    'gatsby-plugin-sitemap'
   ],
 }
