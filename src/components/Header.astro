@@ -1,0 +1,47 @@
+---
+const entries = [
+  { url: "/about", name: "about" },
+  { url: "/blog", name: "blog" },
+];
+const path = Astro.url.pathname;
+---
+
+<style>
+  /* inspired by https://sharkcoder.com/visual/underline#section4 */
+  .selected {
+    position: relative;
+  }
+
+  .selected::before {
+    content: "";
+    background: theme("colors.primary");
+    opacity: 0.5;
+    transform: skew(-12deg);
+    position: absolute;
+    left: -15%;
+    bottom: -5%;
+    width: 130%;
+    height: 14px;
+    z-index: -1;
+  }
+</style>
+
+<header>
+  <nav class="w-full flex flex-col py-4 md:py-10 md:flex-row text-xl space-y-2">
+    <div class="flex-1 font-semibold">
+      <a href="/">Charles Vandevoorde</a>
+    </div>
+    <div class="flex flex-row space-x-8">
+      {
+        entries.map((entry) => (
+          <a
+            href={entry.url}
+            class:list={[{ selected: path.startsWith(entry.url) }]}
+          >
+            {entry.name}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>

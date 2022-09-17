@@ -1,0 +1,46 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import { BlogMetadata } from "@lib/blog";
+
+export interface Props {
+  blog: BlogMetadata;
+}
+
+const { blog } = Astro.props as Props;
+---
+
+<a href={blog.url} class="grid md:grid-cols-[150px_1fr] md:space-x-10">
+  <div class="hidden md:block">
+    {
+      blog.img && (
+        <Image
+          src={blog.img.src}
+          alt={blog.img.alt}
+          class="rounded-lg"
+          width={150}
+          height={150}
+          format="webp"
+        />
+      )
+    }
+  </div>
+  <div>
+    <h3 class="text-2xl text-zinc-800 font-semibold">{blog.title}</h3>
+    <p class="text-base py-1 text-zinc-600 font-light line-clamp-4">
+      {blog.description}
+    </p>
+    <div class="text-zinc-400">
+      <time datetime={blog.date.toString()}
+        >{
+          blog.date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
+      </time>
+      • {blog.readingTime}
+    </div>
+  </div>
+</a>

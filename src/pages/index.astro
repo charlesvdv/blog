@@ -1,0 +1,76 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import Layout from "@layouts/Layout.astro";
+
+import MaxWidth from "@components/MaxWidth.astro";
+import BlogList from "@components/BlogList.astro";
+
+import { getBlogEntries } from "@lib/blog";
+
+import mePic from "@assets/img/me-home-2.jpg";
+
+const entries = getBlogEntries(await Astro.glob("../blog/**/*.mdx"));
+---
+
+<Layout
+  title="home"
+  description="Charles Vandevoorde, a software engineer from Belgium"
+>
+  <div class="bg-secondary">
+    <MaxWidth class="md:grid md:grid-cols-[50%_50%] items-center gap-x-4 py-4">
+      <div class="prose prose-zinc py-10">
+        <h1 class="text-zinc-800 opacity-80 font-semibold">
+          Hello, I'm Charles
+        </h1>
+        <p>
+          I am a backend software engineer living near Brussels, Belgium. Being
+          curious by nature, I always strive for learning new concepts and
+          deepen my understanding of computer science. My interests are
+          wide-ranging ranging going from frontend development and design to
+          distributed systems passing by DevOps and automation. <a href="/about"
+            >Find more about me</a
+          >.
+        </p>
+
+        <!-- spoiler alert... -->
+        <!-- <p>
+          On top of my day-to-day work, I also do consulting on side. Helping
+          companies and individuals to solve their problems or develop new
+          solutions. <a href="/consulting">See how I can help you</a>.
+        </p> -->
+
+        <!-- <p>
+          When I am not in front of my computer or a book, I try to move as much
+          as possible: running or cycling in the Belgian countryside, practicing
+          wa-jutsu (a non-competive martial art) or hiking in nature.
+        </p> -->
+
+        <!-- <center>◦◦◦</center>
+
+        <p>
+          This site also host my <a href="/blog">blog</a> where I write about topics
+          I am interested in such as programming languages, DevOps, testing or software
+          quality. Writing allows me to cristallize my thoughts.
+        </p> -->
+      </div>
+      <div class="m-4 md:my-0">
+        <Image
+          src={mePic}
+          alt="Charles Vandevoorde, software engineer"
+          class="rounded-xl"
+          format="webp"
+        />
+      </div>
+    </MaxWidth>
+  </div>
+
+  <MaxWidth class="mt-10">
+    <div class="flex flex-row items-center space-x-8">
+      <h2 class="text-2xl inline-block py-10">Recent posts</h2>
+      <hr class="flex-1 w-full py-[1px] bg-zinc-500" />
+    </div>
+
+    <BlogList blogs={entries} />
+  </MaxWidth>
+</Layout>

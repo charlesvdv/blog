@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import MaxWidth from "@components/MaxWidth.astro";
+import BlogList from "@components/BlogList.astro";
+
+import { getBlogEntries } from "@lib/blog";
+
+const entries = getBlogEntries(await Astro.glob("../blog/**/*.mdx"));
+---
+
+<Layout
+  title="blog"
+  description="A blog about software engineering authored by Charles Vandevoorde"
+>
+  <MaxWidth>
+    <BlogList blogs={entries} />
+  </MaxWidth>
+</Layout>

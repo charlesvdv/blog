@@ -1,0 +1,54 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import Layout from "@layouts/Layout.astro";
+import { getBlogEntries } from "@lib/blog";
+
+export async function getStaticPaths() {
+  const blogEntries = getBlogEntries(await Astro.glob("../../**/*.mdx"));
+
+  return blogEntries.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
+    props: {
+      ...entry,
+    },
+  }));
+}
+
+const { title, description, date, readingTime, img, Content } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <article class="prose prose-zinc px-4 m-auto md:-mt-12">
+    {
+      img && (
+        <Image
+          class="max-h-52 md:max-h-96 object-cover rounded-lg"
+          src={img.src}
+          width={800}
+          alt={img.alt}
+          format="webp"
+        />
+      )
+    }
+
+    <h1 class="my-2">{title}</h1>
+    <div class="text-zinc-500 text-sm md:text-base">
+      Charles Vandevoorde •
+      <time datetime={date.toString()}
+        >{
+          date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
+      </time>
+      • {readingTime}
+    </div>
+
+    <Content />
+  </article>
+</Layout>

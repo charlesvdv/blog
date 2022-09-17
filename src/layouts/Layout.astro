@@ -1,0 +1,61 @@
+---
+import MaxWidth from "@components/MaxWidth.astro";
+import Header from "@components/Header.astro";
+
+import "@fontsource/inter/variable-full.css";
+
+export interface Props {
+  title: string;
+  description?: string;
+  class?: string;
+  type?: string;
+}
+
+const props = Astro.props as Props;
+const { title, description, type } = props;
+const clazz = props.class === undefined ? "" : props.class;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
+
+    <title>{title} | Charles Vandevoorde</title>
+    <meta property="og:title" content={title} />
+
+    {description && <meta name="description" content={description} />}
+    {description && <meta property="og:description" content={description} />}
+    {type && <meta property="og:type" content={type} />}
+  </head>
+
+  <body class="flex flex-col text-zinc-900">
+    <MaxWidth>
+      <Header />
+    </MaxWidth>
+
+    <main class:list={["py-8 md:py-16 flex-1", clazz]}>
+      <slot />
+    </main>
+
+    <footer
+      class="shrink opacity-60 text-center text-xs md:text-sm w-full py-6"
+    >
+      <hr class="my-4" />
+      <p>Made with ❤️ in Belgium</p>
+      <p>
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+          >CC BY-NC-ND 4.0 license
+        </a>
+      </p>
+    </footer>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+    </style>
+  </body>
+</html>

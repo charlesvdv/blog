@@ -1,0 +1,124 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import Layout from "@layouts/Layout.astro";
+import MaxWidth from "@components/MaxWidth.astro";
+
+import mePic from "@assets/img/me-about.jpg";
+---
+
+<Layout
+  title="about"
+  description="Charles Vandevoorde, a software engineer from Belgium"
+>
+  <MaxWidth class="grid md:grid-cols-2 gap-10">
+    <div class="prose prose-zinc">
+      <p>
+        Hello, I'm Charles, a software engineer living near Brussels, Belgium.
+        Being curious by nature, I always strive to deepen my knowledge or learn
+        new concepts. I am a backend engineer by trade but my interest in
+        computer science and software engineering are wide-ranging:
+      </p>
+
+      <ul>
+        <li>Software architecture and distributed systems</li>
+        <li>Web technologies and design</li>
+        <li>Automation, Cloud and DevOps</li>
+      </ul>
+
+      <p>
+        I currently work as a systems/backend engineer at <a
+          href="https://www.swift.com">SWIFT</a
+        >, a big player in the financial industry. I have a master in industrial
+        engineering specialized in information technology at the <a
+          href="https://www.ecam.be/">ECAM Brussels</a
+        >.
+      </p>
+
+      <p>
+        When I am not hacking in front of a computer, I read books (mostly
+        technical) and do sports. I run, cycle and hike in the Belgian
+        countryside and practice a non-competitive martial art (<a
+          href="https://www.aejt-jjquero.com/wa_jutsu.htm">wa-jutsu</a
+        >).
+      </p>
+    </div>
+
+    <div class="prose prose-zinc self-center">
+      <figure class="m-auto">
+        <Image
+          src={mePic}
+          alt="Charles Vandevoorde, software engineer"
+          class="rounded mx-auto"
+          format="webp"
+        />
+        <figcaption class="text-center">
+          At a race event in Brussels. <q>After effort comes comfort.</q>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="prose prose-zinc">
+      <h2>This website</h2>
+
+      <h3>Purpose</h3>
+
+      <p>
+        The goal of this website is twofold. First, this site serves as a
+        personal playground to experiment with modern web technologies and web
+        design. <br />
+        Second, the blog is used as a tool to practice writing. Writing is an important
+        tool to clarify thoughts and pass along ideas. Each blog post is a testing
+        ground for my reflection.
+      </p>
+
+      <h3>Stack</h3>
+      <p>
+        This website has been designed and developed entirely by me. It is built
+        with the
+        <a href="https://astro.build/">astro</a> meta-framework. The styling is done
+        via
+        <a href="https://tailwindcss.com/">Tailwind CSS</a>. Blog posts are
+        written in the
+        <a href="https://mdxjs.com/">MDX</a> format. The code is <a
+          href="https://github.com/charlesvdv/blog">availabe</a
+        > on Github and hosted on
+        <a href="https://pages.cloudflare.com/">Cloudflare Pages</a>.
+      </p>
+    </div>
+
+    <div class="prose prose-zinc">
+      <h2>Programming</h2>
+      <p>
+        Professionally, I have mostly worked with C, C++ and Java with a bit of
+        Python. In my free time, I often play with <a href="https://go.dev/"
+          >Go</a
+        >, <a href="https://www.rust-lang.org/">Rust</a> and some web technologies
+        like the latest trending framework.
+      </p>
+      <p>
+        I am a big proponent of strong typing, automated testing and
+        well-designed code.
+      </p>
+      <p>
+        I am an avid Linux user. My personal computers have been running <a
+          href="https://archlinux.org/">archlinux</a
+        >
+        for a few years now.
+      </p>
+    </div>
+
+    <div class="prose prose-zinc">
+      <h2>Contact</h2>
+
+      <p>
+        You can contact me by mail at
+        <i class="font-semibold"
+          >&lt;my first name&gt;@&lt;this website domain&gt;
+        </i>. I am also on <a href="https://github.com/charlesvdv">Github</a>.
+      </p>
+
+      <p></p>
+    </div>
+  </MaxWidth>
+</Layout>

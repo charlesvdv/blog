@@ -1,0 +1,75 @@
+---
+title: 'Building a blog with astro'
+description: >
+  I recently rewrote my personal website using Astro, a meta-framework using the island architecture.
+  The island architecture allows to combine static and dynamic components without typical overhead.
+date: '2022-09-12'
+draft: true
+---
+import { Image } from '@astrojs/image/components';
+
+import blogImg from './alexander-milo-HwxVLhLyg2s-unsplash.jpg';
+import figmaImg from './figma.png';
+
+export const img = { src: blogImg, alt: 'A long trail in the mountains' };
+
+I recently read a few books on design. Since my previous website design was not particularly good
+([see for yourself](https://web.archive.org/web/20220731123004/https://vandevoorde.me/about/)),
+I made the decision to create a new personal website.
+
+## Design
+
+I am a backend engineer by trade. I only know web technoligies (CSS/JS) up to a certain point.
+Some past experiences have showed me that designing a website directly by coding is not an easy task.
+I had to fight with CSS for every design ideas or improvements. The design iteration was pretty painful.
+
+This time, I took another approach. I used [figma](https://www.figma.com/) to first have a rough idea of the design
+of my new website before diving into the code. figma is a WYSIWYG design tool primarly used by designers to create
+mockups and prototypes. You can create boxes, texts, shapes, ... and easily drag-and-drop, edit, color them at your
+liking. Compared to the code-first approach, the design iteration was much faster.
+
+In the end, I had a few figma components and two pages ([link to the figma project](https://www.figma.com/file/iAbP3wpiyUyv8XmP5Cdtru/personal-website-v2?node-id=0%3A1)).
+
+<figure>
+  <Image src={figmaImg} alt='A screenshot of my figma project' format='webp' />
+  <figcaption>A screenshot of the latest version of my figma project</figcaption>
+</figure>
+
+The figma project is no longer kept up-to-date. There are a few differences between the screenshot above
+and the current version of this website. This is on purpose. The figma mockups were only supposed to
+help me with the initial design. If ever I want to change a feature on the website with a new design, I might
+re-open the project again.
+
+## Code
+
+It's time to build! My previous website was using [gatsby](https://www.gatsbyjs.com/), a static site generator built on
+top of [react](https://reactjs.org/) and [webpack](https://webpack.js.org/). gatsby is a really cool project but I wanted
+to change. gatsby has been around for more than 7 years now. In Javascript world, that's a long time. So, I wanted to see if
+there was something better created in the meantime. And, to be honest, for a side project, I just like to test the new shiny
+techno.
+
+### Framework selection
+
+I defined a few requirements for the framework selection:
+
+- Best-in-class developer experience
+- First-class Markdown support
+- Generate lightweight static pages
+- Flexible
+
+Heading over [jamstack.org static generator ranking](https://jamstack.org/generators/), I stumbled onto
+[Astro](https://jamstack.org/generators/astro/):
+
+> Astro is a fresh but familiar approach to building websites.
+  Astro combines decades of proven performance best practices with the DX improvements of the
+  component-oriented era. Use your favorite JavaScript framework and automatically ship the bare-minimum
+  amount of JavaScript—by default.
+
+Sounds interesting!
+
+## Deploy
+
+
+---
+
+
