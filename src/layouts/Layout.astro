@@ -1,4 +1,6 @@
 ---
+import Header from "@components/Header.astro";
+
 interface Props {
   title: string;
   description?: string;
@@ -16,7 +18,11 @@ const { title, description } = Astro.props;
     <title>{title} | Charles Vandevoorde</title>
     <meta name="description" content={description || ""} />
   </head>
-  <body>
-    <h1><slot /></h1>
+  <body class="text-gray-900 max-w-2xl px-4 md:px-0 mx-auto">
+    <Header />
+    <main class="py-10">
+      <slot />
+    </main>
+    <footer></footer>
   </body>
 </html>

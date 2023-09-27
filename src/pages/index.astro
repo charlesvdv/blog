@@ -1,13 +1,41 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+import Layout from "@layouts/Layout.astro";
+import mePic from "@assets/me.jpg";
 ---
 
-<BaseLayout title="Home">
-  <main class="max-w-2xl mx-auto px-10 my-10">
+<Layout title="Home">
+  <div class="prose max-w-none">
     <p>
-      I am Charles Vandevoorde. I am a (mostly backend) software engineer living
-      in Belgium. My interests are ranging from distributed systems to
-      architecture passing by web design.
+      <span class="font-semibold">Hey! I am Charles Vandevoorde</span>. I am a
+      (mostly backend) software engineer living in Belgium. I am very curious by
+      nature and always strive to deepen my knownledge in computer sciences. My
+      interests ranges from distributed systems to architecture, passing by web
+      design and DevOps.
     </p>
-  </main>
-</BaseLayout>
+    <p>
+      I currently work at <a href="https://www.swift.com/">Swift</a>, a big
+      player in the financial industry, as a senior system engineer. I have a
+      master in industrial software engineering from the <a
+        href="https://www.ecam.be">ECAM Brussels</a
+      >.
+    </p>
+
+    <Image
+      src={mePic}
+      height={300}
+      quality="max"
+      alt="A picture of me in an Indonesian vuclano"
+      class="rounded-full object-scale-down mx-auto"
+    />
+
+    <p>
+      When I am not in front of a computer, I like to do sports: hiking,
+      running, biking and practicing <a
+        href="https://www.aejt-jjquero.com/wa_jutsu.htm">wa-jutsu</a
+      >, a non-competitive martial art. I am also an avid reader of technical
+      books to satisfy my need to learn.
+    </p>
+  </div>
+</Layout>
